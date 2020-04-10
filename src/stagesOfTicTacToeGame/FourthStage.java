@@ -44,6 +44,44 @@ public class FourthStage {
                     System.out.print("Enter the coordinates: ");
                     scanner.nextLine();
                 }
+
+                char[][] AnotherCells = {{cells[0], cells[1], cells[2]}, {cells[3], cells[4], cells[5]}, {cells[6], cells[7], cells[8]}};
+                if (row == 1 && column == 1) {
+                    indexRow = 2;
+                    indexColumn = 0;
+                } else if (row == 1 && column == 2) {
+                    indexRow = 1;
+                    indexColumn = 0;
+                } else if (row == 1 && column == 3) {
+                    indexRow = 0;
+                    indexColumn = 0;
+                } else if (row == 2 && column == 1) {
+                    indexRow = 2;
+                    indexColumn = 1;
+                } else if (row == 2 && column == 2) {
+                    indexRow = 1;
+                    indexColumn = 1;
+                } else if (row == 2 && column == 3) {
+                    indexRow = 0;
+                    indexColumn = 1;
+                } else if (row == 3 && column == 1) {
+                    indexRow = 2;
+                    indexColumn = 2;
+                } else if (row == 3 && column == 2) {
+                    indexRow = 1;
+                    indexColumn = 2;
+                } else if (row == 3 && column == 3) {
+                    indexRow = 0;
+                    indexColumn = 2;
+                }
+                if (AnotherCells[indexRow][indexColumn] != '_') {
+                    System.out.println("This cell is occupied! Choose another one!");
+                    continue;
+                }
+                if (row > 3 || column > 3) {
+                    System.out.println("Coordinates should be from 1 to 3!");
+                    continue;
+                }
             }
 
         }
