@@ -10,6 +10,20 @@ public class FourthStage {
         System.out.println("---------");
         char[][] newCells = {{cells[0], cells[1], cells[2]}, {cells[3], cells[4], cells[5]}, {cells[6], cells[7], cells[8]}};
         System.out.print("| ");
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (newCells[i][j] == '_') {
+                    newCells[i][j] = ' ';
+                }
+                System.out.print(newCells[i][j] + " ");
+            }
+            if (i != 2) {
+                System.out.print("|\n| ");
+            } else {
+                System.out.println("|");
+            }
+        }
+        System.out.println("---------");
 
     }
 }
