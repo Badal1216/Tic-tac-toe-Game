@@ -1,12 +1,13 @@
 package stagesOfTicTacToeGame;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class FourthStage {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        final Scanner scanner = new Scanner(System.in);
         System.out.print("Enter cells: ");
-        char[] cells = sc.next().toUpperCase().toCharArray();
+        char[] cells = scanner.next().toUpperCase().toCharArray();
         System.out.println("---------");
         char[][] newCells = {{cells[0], cells[1], cells[2]}, {cells[3], cells[4], cells[5]}, {cells[6], cells[7], cells[8]}};
         System.out.print("| ");
@@ -32,6 +33,18 @@ public class FourthStage {
             int indexRow = 0;
             int indexColumn = 0;
             boolean validInput = false;
+
+            while (!validInput) {
+                try {
+                    row = scanner.nextInt();
+                    column = scanner.nextInt();
+                    validInput = true;
+                } catch (InputMismatchException e) {
+                    System.out.println("You should enter numbers!");
+                    System.out.print("Enter the coordinates: ");
+                    scanner.nextLine();
+                }
+            }
 
         }
 
